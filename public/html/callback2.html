@@ -66,5 +66,17 @@
 	})
 	.catch(function(err) {
 		console.log(err);
-	})
+	});
+
+	// IIFE(Immadiatly Invoked Function Expression)
+	(async function(){
+		try {
+			var r = await promiseSum(10, "20");
+			var r2 = await promiseDate(r);
+			console.log(r, r2);
+		}
+		catch(e) {
+			console.log(e);
+		}
+	})();
 </script>

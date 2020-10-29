@@ -1,0 +1,15 @@
+extends ../layout/default.pug
+
+block body
+	.container
+		.jumbotron
+			h1 도서등록
+				small &nbsp;책을 등록하세요.
+		form(name="sendForm" method="post" action="/sql2/save")
+			input.form-control.my-2(type="text" name="title" placeholder="도서명")
+			input.form-control.my-2(type="text" name="isbn" placeholder="ISBN (13자리)")
+			input.form-control.my-2(type="text" name="writer" placeholder="저자")
+			input.form-control.my-2(type="text" name="content" placeholder="내용")
+			input.form-control.my-2(type="date" name="wdate" placeholder="발행일")
+			input.form-control.my-2(type="text" name="price" placeholder="가격")
+			button.btn.btn-primary 저장
