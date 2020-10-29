@@ -2,6 +2,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+require('dotenv').config();
 
 
 /** 전역변수 *************************/
@@ -11,7 +12,7 @@ const sqlRouter2 = require('./routes/sql2');
 
 
 /** 서버구동 *************************/
-app.listen(3000, () => { console.log('http://127.0.0.1:3000') });
+app.listen(process.env.PORT, () => { console.log('http://127.0.0.1:3000') });
 
 
 /** PUG 등록 *************************/

@@ -4,11 +4,10 @@ const router = express.Router();
 /** mysql *************************/
 const mysql = require('mysql');
 const connection = mysql.createConnection({
-	host: 'localhost',
-	user: 'booldook',
-	port: 3306,
-	password: '000000',
-	database: 'booldook'
+	host: process.env.DB_HOST,
+	user: process.env.DB_USER,
+	database: process.env.DB_DATABASE,
+	password: process.env.DB_PASS
 });
 
 router.get('/create', (req, res, next) => {
