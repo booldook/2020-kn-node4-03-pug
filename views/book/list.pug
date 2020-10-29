@@ -1,0 +1,29 @@
+extends ../layout/default.pug
+
+block body
+	.container
+		.jumbotron
+			h1 도서목록
+				small 소장하고 있는 도서의 목록
+			div
+				button.btn.btn-primary(onclick="location.href= '/sql2/create';") 도서작성
+		table.table
+			thead.thead-dark
+				tr
+					th 번호
+					th 제목
+					th ISBN
+					th 저자
+					th 내용
+					th 발행일
+					th 가격
+			tbody
+				each v in lists
+					tr
+						td= v.id
+						td= v.title
+						td= v.isbn
+						td= v.writer
+						td= v.content
+						td= v.wdate
+						td= v.price
