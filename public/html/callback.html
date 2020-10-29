@@ -1,0 +1,35 @@
+<script>
+	function callbackSum(a, b, fn) {
+		if(typeof a === 'number' && typeof b === 'number') {
+			fn(null, a + b);
+		}
+		else {
+			fn("매개변수는 숫자여야 합니다.", null);
+		}
+	}
+
+	callbackSum(10, "30", function(err, result) {
+		if(err) console.log("ERROR: " + err);
+		else console.log("두 변수의 합은 " + result + " 입니다.");
+	});
+
+
+	function promiseSum(a, b) {
+		return new Promise(function(resolve, reject) {
+			if(typeof a === 'number' && typeof b === 'number') {
+				resolve(a + b);
+			}
+			else {
+				reject("매개변수는 숫자여야 합니다.");
+			}
+		});
+	}
+
+	promiseSum(10, "20")
+	.then(function(r){
+		console.log("두 변수의 합은 " + r + " 입니다.");
+	})
+	.catch(function(err) {
+		console.log(err);
+	})
+</script>
